@@ -66,8 +66,12 @@ You can also try using putty to ssh into the machines from your host machine.
 (putty is available to download from the [Putty download site](https://www.chiark.greenend.org.uk/~sgtatham/putty/) or from [microsoft store](https://apps.microsoft.com/detail/xpfnzksklbp7rj?hl=en-GB&gl=GB)
 
    ![alt text](../../docs/images/putty1.png "Figure putty1.png")
+ 
+ 
+   
+Once you have completed the basic ssh tests, move on the ansible examples in the [ansible](./ansible) folder.
 
-## additional notes and gotchas
+## Additional notes and gotchas
 
 ### Problems with cpu in ubuntu 24.04
 

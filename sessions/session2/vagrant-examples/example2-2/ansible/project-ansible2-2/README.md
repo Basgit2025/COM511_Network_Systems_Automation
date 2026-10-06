@@ -3,13 +3,30 @@
 In [project-ansible2-1](../project-ansible2-1) we activated ansible with a simple command which executed a single ansible module (ping).
 In this exercise we will look at how ansible runs `playbooks` which contain multiple commands.
 
-In our previous work with vagrant provisioning scripts, we saw how we could use bash commands to install the apache web server on ubuntu and rocky linux. 
-The commands were different for each distribution but the end result was the same; a running apache web server with an example web page which we supplied.
-
 The principle role of ansible is to provision a fleet of devices or servers using ansible `playbooks` which are files written in the `yaml` format with the file extension `.yml` or `.yaml`.
 
+Then ansible runs a playbook, by default it gatehrs facts on all of the servers it touches.
+
+[playbook-facts-anddebug.yml](playbook-facts-anddebug.yml) prints out facts on the servers in the inventory using a debug message.
+
+run the playbook using 
+
+```
+ansible-playbook playbook-facts-anddebug.yml -i inventory.ini
+```
+
+If you need to see more debug output you can use the `-v`, `-vv`, `-vvv`, `-vvvv` flags on the command line to see increasingly detailed debug inforation when the playbook is running.
+
+e.g 
+
+```
+ansible-playbook playbook-facts-anddebug.yml -i inventory.ini -vv
+```
 
 ## provisioning ubuntu and rocky servers using separate playbooks
+
+In our previous work with vagrant provisioning scripts, we saw how we could use bash commands to install the apache web server on ubuntu and rocky linux. 
+The commands were different for each distribution but the end result was the same; a running apache web server with an example web page which we supplied.
 
 In the [inventory.ini](./inventory.ini) file you will see that the servers are categorised as `controllers`,  `ubuntu_hosts` and `rocky_hosts`.
 
@@ -61,7 +78,8 @@ Run the playbook using:
 ansible-playbook playbook-all-apache.yml -i inventory.ini
 ```
 
-The playbook should install apache on all of the servers includng the `ansible_controller` which can be reached at 
+The playbook should install apache on all of the servers including the `ansible_controller` which can be reached at 
 [http://192.168.56.10/examplewebpage.html](http://192.168.56.10/examplewebpage.html)
 
-Have a look at the output to understadn he order in which the roles and tasks are performed against the servers in the inventory.
+Have a look at the output to understand the order in which the roles and tasks are performed against the servers in the inventory.
+
