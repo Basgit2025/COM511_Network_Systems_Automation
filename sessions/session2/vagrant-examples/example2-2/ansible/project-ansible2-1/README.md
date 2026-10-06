@@ -42,9 +42,19 @@ Origin: <adhoc 'ping' task>
 
 ```
 
-To fix this you will need to ssh into each of the machines and accept the host keys from the ansible account.
-This will add the host key for each machine to the `\home\ansible\.ssh\known_hosts` file.
-(Note that if you rebuilt these machines, you may find the keys no longer match in which case the simplest solution is to delete the known_hosts file `rm \home\ansible\.ssh\known_hosts` )
+To fix this you will need to ssh into each of the machines and accept the host keys from the ansible account. 
+For example:
+```
+ssh 192.168.56.20
+The authenticity of host '192.168.56.20 (192.168.56.20)' can't be established.
+ED25519 key fingerprint is SHA256:VjufUgJCRplYbNSq6ATc0g/DLpYxoTbOJ7Eaml2Enlc.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.56.20' (ED25519) to the list of known hosts.
+```
+This will add the host key for each machine to the `/home/ansible/.ssh/known_hosts` file.
+
+(Note that if you rebuilt these machines, you may find the keys no longer match in which case the simplest solution is to delete the known_hosts file `rm /home/ansible/.ssh/known_hosts` )
 
 Alternatively, you can run the ansible command without key checking from the command line
 
