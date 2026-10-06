@@ -54,16 +54,14 @@ Warning: Permanently added '192.168.56.20' (ED25519) to the list of known hosts.
 ```
 This will add the host key for each machine to the `/home/ansible/.ssh/known_hosts` file.
 
-(Note that if you rebuilt these machines, you may find the keys no longer match in which case the simplest solution is to delete the known_hosts file `rm /home/ansible/.ssh/known_hosts` )
+(Note that if you re-provision these machines, you may find the host keys no longer match in which case the simplest solution is to delete the known_hosts file `rm /home/ansible/.ssh/known_hosts` )
 
-Alternatively, you can run the ansible command without key checking from the command line
+Alternatively, if you can't revalidate the keys, you can also run the ansible command without key checking from the command line
 
 ```
 ansible -i inventory.ini all -m ping -e "ansible_ssh_common_args='-o StrictHostKeyChecking=no'"
-
 ```
-
-will result in 
+A successfu ansible ping will result in:
 
 ```
 ansible@ansible-controller:/vagrant/ansible/project-ansible2-1$ ansible -i inventory.ini all -m ping -e "ansible_ssh_common_args='-o StrictHostKeyChecking=no'"
