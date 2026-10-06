@@ -42,7 +42,9 @@ Origin: <adhoc 'ping' task>
 
 ```
 
-To fix this you will need to ssh into each of the machines and accept the keys.
+To fix this you will need to ssh into each of the machines and accept the host keys from the ansible account.
+This will add the host key for each machine to the `\home\ansible\.ssh\known_hosts` file.
+(Note that if you rebuilt these machines, you may find the keys no longer match in which case the simplest solution is to delete the known_hosts file `rm \home\ansible\.ssh\known_hosts` )
 
 Alternatively, you can run the ansible command without key checking from the command line
 
