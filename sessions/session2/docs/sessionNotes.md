@@ -92,15 +92,14 @@ Some ansible projects are conveniently provided in the `/vagrant/ansible` folder
 
 ---
 **Exercise 2.3**
-
-Go through the [session2/vagrant-examples/example2-2/ansible/project-ansible2-1](../../session2/vagrant-examples/example2-1/ansible/project-ansible2-1) examples to run a simple set of ansible commands
+Go through the [session2/vagrant-examples/example2-2/ansible/project-ansible2-1](../../session2/vagrant-examples/example2-2/ansible/project-ansible2-1) examples to run a simple set of ansible commands
 * can you ping the servers using ansible
 ---
 
 ---
 **Exercise 2.4**
 
-Go through the [session2/vagrant-examples/example2-2/ansible/project-ansible2-2](../../session2/vagrant-examples/example2-1/ansible/project-ansible2-2) examples to run a simple set of ansible playbooks
+Go through the [session2/vagrant-examples/example2-2/ansible/project-ansible2-2](../../session2/vagrant-examples/example2-2/ansible/project-ansible2-2) examples to run a simple set of ansible playbooks
 * how do ubuntu and rocky differ in provisioning
 * how is the web page injected into the machines
 
