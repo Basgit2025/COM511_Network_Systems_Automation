@@ -65,24 +65,20 @@ You can also try using putty to ssh into the machines from your host machine.
 
 (putty is available to download from the [Putty download site](https://www.chiark.greenend.org.uk/~sgtatham/putty/) or from [microsoft store](https://apps.microsoft.com/detail/xpfnzksklbp7rj?hl=en-GB&gl=GB)
 
-
-   ![alt text](../../../docs/images/putty1.png "Figure putty1.png")
-
-
-
+   ![alt text](../../docs/images/putty1.png "Figure putty1.png")
 
 ## additional notes and gotchas
 
 ### Problems with cpu in ubuntu 24.04
 
-there is a known bug in the ubuntu 24.04 virtual box which prevents it working correctly with more than one virtual cpu.
+There is a known bug in the ubuntu 24.04 bento box which prevents it working correctly with more than one virtual cpu in  VirtualBox.
 Using a higher cpu count can cause the VM to hang due to a race conditions between threads.
 
 ```
 vb.cpus = 1
 ```
 
-### wrong file endings in files imported with shared `\vagrant` folder
+### wrong MSDOS file endings in files imported with shared `\vagrant` folder
 
 One problem which can occur is that any files edited on a windows machine may have different encoding and line endings when run on a linux machine.
 
@@ -103,13 +99,13 @@ This can be fixed manually in the virtual machine by editing the file in the lin
 
 When you write the file, you may see 'saving as MSDOS'
 
-   ![alt text](../../../docs/images/nano-msdos1.png "Figure nano-msdos1.png")
+   ![alt text](../../docs/images/nano-msdos1.png "Figure nano-msdos1.png")
    
-   ![alt text](../../../docs/images/nano-msdos2.png "Figure nano-msdos1.png")
+   ![alt text](../../docs/images/nano-msdos2.png "Figure nano-msdos1.png")
    
-You can save as a linux file by using windows ALT with M key to change the save format from MSDOS to linux.
+You can save as a linux file by using windows ALT with D key to change the save format from MSDOS to linux.
       
-   ![alt text](../../../docs/images/nano-msdos3.png "Figure nano-msdos1.png")
+   ![alt text](../../docs/images/nano-msdos3.png "Figure nano-msdos1.png")
 
 Once the format is changed, it should be mapped correctly when checked into github.
 
