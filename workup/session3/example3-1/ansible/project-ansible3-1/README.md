@@ -9,13 +9,18 @@ see https://www.ansiblebyexample.com/articles/ansible-dnsmasq-dhcp-dns-network-s
 ## running
 
 ```
-#you may need to change the known_hosts key
+#you may need to change the known_hosts keys
 rm ~/.ssh/known_hosts
 
 ```
 
 ```
-cd project-ansible3-1
+vagrant ssh ansible_controller
+
+sudo su ansible
+
+cd /vagrant/ansible/project-ansible3-1/
+
 ansible-playbook -i inventory/dev/hosts.ini  setup-dns-server.yml
 
 ```
