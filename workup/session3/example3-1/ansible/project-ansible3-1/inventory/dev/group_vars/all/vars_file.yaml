@@ -1,0 +1,55 @@
+---
+ansible_connection: ssh 
+ansible_user: ansible
+ansible_ssh_pass: minad1234
+
+ipmi_user: ADMIN
+ipmi_password: ADMIN
+
+# using the vagrant shared folder so that survives a vagrant destroy and vagrant up cycle
+sharedisos: /vagrant/www/sharedisos
+http_root: /vagrant/www
+tftp_root: /srv/tftp
+nfs_root: /srv/nfs
+
+use_apt_cacher_ng: true
+apt_cacher_ng_log_dir: /var/log/apt-cacher-ng
+apt_cacher_ng_cache_dir: /vagrant/cache/apt-cacher-ng
+apt_cacher_ng_cache_user: vagrant
+apt_cacher_ng_cache_user_group: vagrant
+apt_cacher_ng_port: 3142
+
+ubuntu_iso_url: https://releases.ubuntu.com/resolute/ubuntu-26.04-live-server-amd64.iso
+ubuntu_iso_name: ubuntu-26.04-live-server-amd64.iso
+
+dnsmasq_interface: eth2
+dnsmasq_domain: lab.example.com
+dnsmasq_dhcp_range_start: 192.168.20.210
+dnsmasq_dhcp_range_end: 192.168.20.230
+dnsmasq_dhcp_lease_time: 1h
+dnsmasq_gateway:   192.168.20.200
+dnsmasq_dns_servers:
+  - 194.81.151.70
+#  - 8.8.8.8
+
+nfs_exports:
+     - path: /srv/nfs/debian
+       clients: "*"
+       options: "ro,sync,no_subtree_check,no_root_squash"
+
+operating_systems:
+     - os_id: "ubuntu"
+       os_version_id: "26.04"
+       iso_url: https://releases.ubuntu.com/resolute/ubuntu-26.04-live-server-amd64.iso
+       iso_name: ubuntu-26.04-live-server-amd64.iso
+       
+     - os_id: "debian"
+       os_version_id: "13.6.0"
+       iso_url: https://cdimage.debian.org/debian-cd/13.6.0/amd64/iso-cd/debian-13.6.0-amd64-netinst.iso
+       iso_name: debian-13.6.0-amd64-netinst.iso
+       pxe_installer_url: http://ftp.debian.org/debian/dists/Debian13.6/main/installer-amd64/current/images/netboot/netboot.tar.gz
+
+     - os_id: "gparted"
+       os_version_id: "1.8.1-6"
+       iso_url: https://downloads.sourceforge.net/gparted/gparted-live-1.8.1-6-amd64.iso
+       iso_name: gparted-live-1.8.1-6-amd64.iso
