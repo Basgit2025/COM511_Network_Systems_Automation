@@ -6,7 +6,6 @@
 
   vars:
 
-
   roles:
     - dnsmasq-config
 
