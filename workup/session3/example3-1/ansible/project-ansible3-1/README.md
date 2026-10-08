@@ -15,7 +15,7 @@ rm ~/.ssh/known_hosts
 ```
 
 ```
-cd dnsmasq-pxe-boot1
+cd project-ansible3-1
 ansible-playbook -i inventory/dev/hosts.ini  setup-dns-server.yml
 
 ```
