@@ -1,6 +1,6 @@
 # playbooks/setup-pxe-server.yml
 ---
-- name: Configure PXE boot server
+- name: Configure DHCP and DNS server
   hosts: dns_server
   become: true
 
