@@ -1,7 +1,5 @@
 [Main Menu](../../../sessions/README.md) |[session3](../../session3/) | [Session 3 Notes](../docs/sessionNotes.md)
 
-[Main Menu](../../../sessions/README.md)|[Session3](../../session3/) | [Session 3 Notes](../docs/sessionNotes.md)
-
 # Session 3 Notes DHCP and DNS
 
 We finished [Session2](../../session2) by looking at an example where Ansible was used to provision all the servers with an Apache web server. 
@@ -53,9 +51,9 @@ If the pool is exhausted, no more addresses will be issued until a lease expires
 **Exercise 3.1**
 
 Follow the notes  in [example3-1](../example3-1) to set up a dnsmasq DHCP server using ansible which can issue addresses to two other machines
-* make sure you understand the networking
-* can you understand the dnsmasq DHCP configuration and how it is created with ansible
-* can you use tcpdump to follow the DHCP requests
+* Make sure you understand the vagrant / virtualbox networking
+* Can you understand the dnsmasq DHCP configuration and how it is created with ansible
+* Can you use tcpdump to follow the DHCP requests and responses
 
 ---
 
